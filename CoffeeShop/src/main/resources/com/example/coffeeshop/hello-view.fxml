@@ -1,20 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coffeeshop.HelloController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDone="#milkSliderScroll" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coffeeshop.HelloController">
    <children>
-      <RadioButton fx:id="coffeeRadioButton" layoutX="63.0" layoutY="101.0" mnemonicParsing="false" onAction="#beverageRadioButtonClicked" selected="true" text="Coffee is $1">
+      <RadioButton fx:id="coffeeRadioButton" layoutX="25.0" layoutY="34.0" mnemonicParsing="false" onAction="#beverageRadioButtonClicked" selected="true" text="Coffee is $1">
          <toggleGroup>
             <ToggleGroup fx:id="beverageToggleGroup" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="latteRadioButton" layoutX="63.0" layoutY="128.0" mnemonicParsing="false" onAction="#beverageRadioButtonClicked" text="Latte is $2" toggleGroup="$beverageToggleGroup" />
-      <RadioButton fx:id="expressoRadioButton" layoutX="58.0" layoutY="155.0" mnemonicParsing="false" onAction="#beverageRadioButtonClicked" text="Expresso 1.5" toggleGroup="$beverageToggleGroup" />
+      <RadioButton fx:id="latteRadioButton" layoutX="23.0" layoutY="70.0" mnemonicParsing="false" onAction="#beverageRadioButtonClicked" text="Latte is $2" toggleGroup="$beverageToggleGroup" />
+      <RadioButton fx:id="expressoRadioButton" layoutX="23.0" layoutY="110.0" mnemonicParsing="false" onAction="#beverageRadioButtonClicked" text="Expresso 1.5" toggleGroup="$beverageToggleGroup" />
 
-      <Label fx:id="receiptLabel" layoutX="300.0" layoutY="101.0" />
+      <Label fx:id="receiptLabel" layoutX="299.0" layoutY="128.0" />
+      <CheckBox fx:id="milkCheckBox" layoutX="129.0" layoutY="34.0" mnemonicParsing="false" onAction="#addInCheckBoxChecked" text="Milk" />
+      <CheckBox fx:id="halfAndHalf" layoutX="129.0" layoutY="70.0" mnemonicParsing="false" onAction="#addInCheckBoxChecked" text="Half and Half" />
+      <CheckBox fx:id="soyMilkCheckBox" layoutX="125.0" layoutY="110.0" mnemonicParsing="false" onAction="#addInCheckBoxChecked" text="Soy Milk $0.50" />
+      <Slider fx:id="milkSlider" blockIncrement="1.0" layoutX="251.0" layoutY="33.0" majorTickUnit="1.0" max="5.0" minorTickCount="0" onMouseReleased="#milkSliderScroll" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+      <Button layoutX="67.0" layoutY="218.0" mnemonicParsing="false" onAction="#addToOrderButtonClicked" text="Add to Order" />
+      <TextArea fx:id="orderTextArea" layoutX="176.0" layoutY="218.0" prefHeight="146.0" prefWidth="374.0" />
+      <TextField fx:id="customerNameTextField" layoutX="125.0" layoutY="162.0" prefHeight="26.0" prefWidth="225.0" />
+      <Label layoutX="33.0" layoutY="166.0" text="Customer Name" />
    </children>
 </AnchorPane>
